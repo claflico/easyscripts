@@ -1,0 +1,25 @@
+#!/bin/bash
+# This script lists all instances unless passed a tenant as a variable
+#
+# Author: Cory Claflin https://github.com/claflico
+#
+# Documentation and download: https://github.com/claflico/easyscripts/openstack
+
+if [[ $1 == '-h' || $1 == '--help' ]];then
+  echo "Usage: ostack-list-instances to show instances from all tenants"
+  echo "Usage: ostack-list-instances <tenant> to show instances from just that tenant"
+  exit
+fi
+
+# Read in the credentials
+source /root/openrc
+
+# See if we have been passed a tenant
+if [ $# -eq 1 ]; then
+  export OS_TENANT_NAME=$1
+  #List the instances in that tenant
+  nova list
+else
+  #List all instances
+  nova list --all-tenants
+fi
