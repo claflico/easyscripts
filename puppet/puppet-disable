@@ -1,0 +1,5 @@
+#!/bin/bash
+# This script disables puppet
+
+echo "sudo puppet agent --disable"
+sudo puppet agent --disable

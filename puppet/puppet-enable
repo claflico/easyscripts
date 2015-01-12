@@ -1,0 +1,5 @@
+#!/bin/bash
+# This script enables puppet
+
+echo "sudo puppet agent --enable"
+sudo puppet agent --enable
