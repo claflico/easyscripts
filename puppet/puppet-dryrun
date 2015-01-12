@@ -1,0 +1,6 @@
+#!/bin/bash
+# This script runs puppet in debug mode
+
+echo "Running puppet in debug/test/dryrun mode..."
+echo "sudo puppet agent --test --debug --noop"
+sudo puppet agent --test --debug --noop
